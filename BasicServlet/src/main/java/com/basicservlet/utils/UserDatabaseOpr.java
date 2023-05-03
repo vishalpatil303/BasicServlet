@@ -13,7 +13,8 @@ public interface UserDatabaseOpr {
 	int insert(Account account);
 	int update(Account account);
 	Account findById(int id);
-	void delete(Account account);
+	int delete(Account account);
+
 	List<Account> findAll();
 	void closeAllResource(ResultSet resultSet ,Statement statement , PreparedStatement preparedStatement ,Connection connection);
 

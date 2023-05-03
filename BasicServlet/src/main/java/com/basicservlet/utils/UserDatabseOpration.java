@@ -109,7 +109,8 @@ public class UserDatabseOpration implements UserDatabaseOpr {
 	}
 
 	@Override
-	public void delete(Account account) {
+	public int delete(Account account) {
+		int result = 0;
 		PreparedStatement statement = null;
 		if (findById(account.getId()) != null) {
 			Connection connection = ApplicationUtils.getConnection();
@@ -117,7 +118,7 @@ public class UserDatabseOpration implements UserDatabaseOpr {
 			try {
 				statement = connection.prepareStatement(sql);
 				statement.setInt(1, account.getId());
-				int result = statement.executeUpdate();
+				result = statement.executeUpdate();
 				System.out.println(result + " of row deleted.");
 			} catch (SQLException e) {
 
@@ -126,7 +127,7 @@ public class UserDatabseOpration implements UserDatabaseOpr {
 				closeAllResource(null, null, statement, connection);
 			}
 		}
-
+		return result;
 	}
 
 	@Override
