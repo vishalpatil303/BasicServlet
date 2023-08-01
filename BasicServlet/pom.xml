@@ -21,6 +21,12 @@
 			<artifactId>tomcat-servlet-api</artifactId>
 			<version>9.0.74</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.webjars/bootstrap -->
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>bootstrap</artifactId>
+			<version>5.2.3</version>
+		</dependency>
 
 	</dependencies>
 	<build>
